@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEPTUNKOD_2</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        table, td {
+            border: none;
+            padding: 5px;
+        }
+        button { margin: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1 id="fejlec">jQuery feladatok</h1>
+
+    <p>A jQuery egy JavaScript programozoi könyvtár, amelyet John Resign kezdett fejleszteni.</p>
+
+    <ul class="lista">
+        <li><a href="https://a1.hu">tíz</a></li>
+        <li><a href="https://a2.hu">húsz</a></li>
+        <li><a href="https://a3.hu">harminc</a></li>
+    </ul>
+
+    <ul class="lista">
+        <li><a href="https://b1.hu">tizedik</a></li>
+        <li><a href="https://b2.hu">huszadik</a></li>
+        <li><a href="https://b3.hu">harmincadik</a></li>
+    </ul>
+
+    <table id="aaaa">
+        <tbody>
+        <tr><td>11111</td><td>aaaaaa</td><td>bbbbb</td></tr>
+        <tr><td>22222</td><td>aaaaaa</td><td>bbbbb</td></tr>
+        <tr><td>33333</td><td>aaaaaa</td><td>bbbbb</td></tr>
+        <tr><td>44444</td><td>aaaaaa</td><td>bbbbb</td></tr>
+        <tr><td>55555</td><td>aaaaaa</td><td>bbbbb</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Műveletek</h2>
+
+    <button id="K1">Kattints ide_1</button>
+    <button id="K2">Kattints ide_2</button>
+    <button id="K3">Kattints ide_3</button>
+    <button id="K4">Kattints ide_4</button>
+    <button id="K5">Kattints ide_5</button>
+
+    <p>jQuery <a href="https://jquery.com/">jQuery weboldal</a></p>
+
+    <script>
+        // Lista két első elemének kiválasztása mindkét listából
+        function elsoKetto() {
+            return $(".lista li:lt(2)");
+        }
+
+        // K1 – elrejti a lista két első elemét és href-t
+        $("#K1").click(function() {
+            elsoKetto().hide();
+        });
+
+        // K2 – elrejti a lista két első elemét és href-t ÉS a K2 gombot
+        $("#K2").click(function() {
+            elsoKetto().hide();
+            $(this).hide();
+        });
+
+        // K3 – elrejti a fejlécet, lista két első elemét és href-t
+        $("#K3").click(function() {
+            $("#fejlec").hide();
+            elsoKetto().hide();
+        });
+
+        // K4 – elrejti a lista két első elemét, link szöveget és href-t
+        // (tehát csak a <li> tűnik el, mert abban van a link + szöveg)
+        $("#K4").click(function() {
+            elsoKetto().hide();
+        });
+
+        // K5 – elrejti a lista két első elemét, href-t és a táblázat páros sorait
+        $("#K5").click(function() {
+            elsoKetto().hide();
+            $("#aaaa tr:even").hide();   // 0-alapú index: even = páros sorszám
+        });
+    </script>
+
+</body>
+</html>

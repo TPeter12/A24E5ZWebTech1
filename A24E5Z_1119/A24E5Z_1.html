@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>jQuery feladatok</h1>
+
+    <p>A jQuery egy JavaScript programozoi könyvtár, amelyet John Resign kezdett fejleszteni.</p>
+
+    <p class="elrejt"><b>Elterjedtnek tekinthető, segítségével könnyen bejárható egy HTML oldal DOM-ja.</b></p>
+    <p class="elrejt"><b>Kattints ide - a bekezdés elrejtve!</b></p>
+
+    <p>ME weboldal: <a href="https://www.uni-miskolc.hu/">Miskolci Egyetem</a></p>
+
+    <script>
+        $(document).ready(function() {
+            $(".elrejt").click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+</body>
+</html>
