@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A24E5Z_3</title>
+    <style>
+        .infoBox {
+    display: none;
+    position: absolute;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    }
+
+    input, button {
+        margin-top: 1rem;
+    }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <h1 id="fejlec" data-info="Ez egy információs szöveg a fejlécről.">jQuery feladatok</h1>
+
+    <div id="infoBox"></div>    
+    <p id="elrejt">A jQuery egy JavaScript programozoi könyvtár, amelyet John Resign kezdett fejleszteni. 
+        <b class="click1">Kattints ide</b>, és eltűnik!
+    </p>
+
+    <p id="dupla">Elterjedtnek tekinthető, segítségével könnyen bejárható egy HTML oldal DOM-ja. 
+        <b class="click2">Kattints ide duplán</b>, és eltűnik!
+    </p>
+
+    <label for="name">Név:</label>
+    <input type="text", id="name" name="name"> <br>
+    <label for="email">E-mail:</label>
+    <input type="email", id="email" name="email"> <br>
+    <label for="pass">Jelszó:</label>
+    <input type="password", id="pass" name="pass"> <br>
+
+    
+    <button id="myButton">Jelentkezés</button>
+
+    <script>
+        // 1 kattintás → eltűnik
+        $(".click1").click(function() {
+            $(this).closest("p").hide();
+        });
+
+        // 2 kattintás → eltűnik
+        $(".click2").dblclick(function() {
+            $(this).closest("p").hide();
+        });
+
+        $("#myButton").mouseenter(function() { ... })
+
+        $(document).ready(function () {
+    $("#fejlec").on("mouseenter", function (event) {
+        let infoText = $(this).data("info");
+
+        $("#infoBox")
+            .text(infoText)
+            .css({
+                top: event.pageY + 10 + "px",
+                left: event.pageX + 10 + "px"
+            })
+            .fadeIn(200);
+    });
+
+    $("#fejlec").on("mousemove", function (event) {
+        $("#infoBox").css({
+            top: event.pageY + 10 + "px",
+            left: event.pageX + 10 + "px"
+        });
+    });
+
+    $("#fejlec").on("mouseleave", function () {
+        $("#infoBox").fadeOut(200);
+    });
+});
+
+
+$("input").on("mousemove", function (e) {
+    let relY = e.pageY - $(this).offset().top;
+    let height = $(this).height();
+
+    if (relY < height / 2) {
+        $(this).css("border-color", "red");
+    } else {
+        $(this).css("border-color", "blue");
+    }
+});
+
+
+$("input").on("click", function () {
+    $(this).css("background-color", "#ffefa0");
+});
+
+    </script>
+
+</body>
+</html>
