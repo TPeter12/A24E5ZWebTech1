@@ -1,0 +1,74 @@
+[
+  {
+    "id": "colt-saa",
+    "title": "Colt Single Action Army „Peacemaker”",
+    "img": "kepek/Colt.png",
+    "data": {
+      "Típus": "Forgópisztoly (single-action revolver)",
+      "Űrméret": ".45 Colt",
+      "Tárkapacitás": "6 lőszer",
+      "Gyártás": "1873-napjainkig",
+      "Becenév": "„The Peacemaker” - „Az egyenlítő”"
+    }
+  },
+  {
+    "id": "paterson",
+    "title": "Colt Paterson (Navy)",
+    "img": "kepek/Navy_Patterson.png",
+    "data": {
+      "Típus": "Az első igazi revolver",
+      "Űrméret": ".36 ball",
+      "Tárkapacitás": "5 lőszer",
+      "Gyártás": "1836-1842",
+      "Becenév": "„Texas Paterson”"
+    }
+  },
+  {
+    "id": "remington",
+    "title": "Remington 1858 New Army",
+    "img": "kepek/Remington.png",
+    "data": {
+      "Típus": "Forgópisztoly",
+      "Űrméret": ".44 ball (sok átalakítva .45 Colt)",
+      "Tárkapacitás": "6 lőszer",
+      "Gyártás": "1858-1875",
+      "Becenév": "„A cowboy kedvence”"
+    }
+  },
+  {
+    "id": "sawedoff",
+    "title": "Sawed-off Shotgun (Coach Gun)",
+    "img": "kepek/Sawed_Off_Shotgun.png",
+    "data": {
+      "Típus": "Lerövidített kétcsövű sörétes puska",
+      "Űrméret": "10 vagy 12 gauge",
+      "Tárkapacitás": "2 lőszer",
+      "Gyártás": "1860-as-1880-as évek",
+      "Becenév": "„A saloon végső érve”"
+    }
+  },
+  {
+    "id": "winchester",
+    "title": "Winchester Model 1873",
+    "img": "kepek/Winchester.png",
+    "data": {
+      "Típus": "Karabély (lever-action ismétlő)",
+      "Űrméret": ".44-40 WCF",
+      "Tárkapacitás": "15+1 lőszer",
+      "Gyártás": "1873-1919",
+      "Becenév": "„A fegyver, amely megnyerte a Nyugatot”"
+    }
+  },
+  {
+    "id": "harmonica",
+    "title": "Harmonica Pistol",
+    "img": "kepek/Harmonica_Pistol.jpg",
+    "data": {
+      "Típus": "Többcsövű zsebpisztoly (vízszintes tár)",
+      "Űrméret": ".32 - .40 változatok",
+      "Tárkapacitás": "5-10 lőszer",
+      "Gyártás": "1840-es-1860-as évek",
+      "Becenév": "„A kártyások utolsó mentsvára”"
+    }
+  }
+]

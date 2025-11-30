@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vadnyugat Legendái | The Wild West</title>
+    <link rel="stylesheet" href="TWW.css">
+    <link rel="stylesheet" href="TWWlegends.css">
+</head>
+<body>
+    <!-- Sticky bőr háttér -->
+    <div class="background"></div>
+
+    <!-- Sticky felső menüsáv -->
+    <header class="topbar">
+        <div class="logo">WILD WEST SALOON</div>
+        <nav class="main-nav">
+            <a href="TWWwebpage.html">Kezdőlap</a>
+            <a href="TWWlegends.html">Legendák</a>
+            <a href="TWWguns.html">Fegyverek</a>
+            <a href="TWWmedia.html">Média</a>
+            <a href="TWWform.html">Űrlap</a>
+        </nav>
+    </header>
+
+    <!-- Sticky oldalsáv -->
+    <aside class="sidebar">
+        <h2>Gyorsmenü</h2>
+        <ul>
+            <li><a href="#Billy">Billy the kid</a></li>
+            <li><a href="#Wyatt">Wyatt Earp</a></li>
+            <li><a href="#Jesse">Jesse James</a></li>
+            <li><a href="#Jane">Calamity Jane</a></li>
+            <li><a href="#Doc">Doc Holliday</a></li>
+        </ul>
+    </aside>
+
+    <!-- Fő tartalom -->
+    <main class="content">
+
+        <!-- LEGENDÁK SZEKCIÓ -->
+        <section id="legends">
+            <h1>Vadnyugat Legendái</h1>
+            <p>Lépj be a legendák világába, ahol a törvényen kívüliek, seriffek, banditák és revolverhősök neve máig visszhangzik a préri szelében.</p>
+   
+            <!-- 1. Billy the Kid -->       
+            <div class="legend-card" id="Billy">
+                <img src="kepek/BillyTheKid.jpg" alt="Billy the Kid" class="legend-img">
+                <div class="legend-body">
+                    <div class="legend-name">Billy the Kid</div>
+                    <div class="legend-title">„A Kölyök” - A leggyorsabb pisztoly a Westen</div>
+                    <p class="legend-text">
+                        Henry McCarty, ismertebb nevén Billy the Kid mindössze 21 évet élt, mégis több mint 21 emberrel végzett - legalábbis a legenda szerint. 
+                        Az új-mexikói Lincoln megyei háborúban vált híressé, és Pat Garrett seriff lőtte le 1881-ben. 
+                        A mai napig vitatkoznak, hogy valóban meghalt-e…
+                    </p>
+                </div>
+            </div>
+
+            <!-- 2. Wyatt Earp -->
+            <div class="legend-card" id="Wyatt">
+                <img src="kepek/WyattEarp.png" alt="Wyatt Earp" class="legend-img">
+                <div class="legend-body">
+                    <div class="legend-name">Wyatt Earp</div>
+                    <div class="legend-title">A Törvény Embere - Tombstone örök seriffje</div>
+                    <p class="legend-text">
+                        Dodge City és Tombstone legendás békebírója. Az O.K. Corralnál vívott 30 másodperces párbaj (1881) örökre beírta nevét a történelembe. 
+                        Testvéreivel és Doc Holliday-jel együtt szállt szembe a Clanton-bandával. Egész életében törvényt szolgált - vagy legalábbis úgy csinálta.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 3. Jesse James -->
+            <div class="legend-card" id="Jesse">
+                <img src="kepek/JesseJames.jpg" alt="Jesse James" class="legend-img">
+                <div class="legend-body">
+                    <div class="legend-name">Jesse James</div>
+                    <div class="legend-title">Amerika Robin Hoodja</div>
+                    <p class="legend-text">
+                        A polgárháború után bankokat és vonatokat rabolt ki testvérével, Frankkel. 
+                        Sokan hősként tisztelték, mert főleg északi bankokat támadott. 1882-ben saját bandatagja, Robert Ford hátba lőtte a 10 000 dolláros vérdíjért.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 4. Calamity Jane -->
+            <div class="legend-card" id="Jane">
+                <img src="kepek/CalamityJane.jpg" alt="Calamity Jane" class="legend-img">
+                <div class="legend-body">
+                    <div class="legend-name">Calamity Jane</div>
+                    <div class="legend-title">A Vadnyugat Amazonja</div>
+                    <p class="legend-text">
+                        Martha Jane Cannary, azaz Calamity Jane, férfi ruhában lovagolt, ivott és lőtt, mint a legkeményebb cowboyok. 
+                        Deadwoodban ápolta a himlőbetegeket, és állítása szerint Wild Bill Hickok szerelme volt. 
+                        A valóság és a legenda nála teljesen egybeforrt.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 5. Doc Holliday -->
+            <div class="legend-card" id="Doc">
+                <img src="kepek/DocHolliday.jpg" alt="Doc Holliday" class="legend-img">
+                <div class="legend-body">
+                    <div class="legend-name">Doc Holliday</div>
+                    <div class="legend-title">A Fogorvos, aki gyorsabb volt a halálnál</div>
+                    <p class="legend-text">
+                        Tuberkulózisos fogorvosból lett profi szerencsejátékos és pisztolyhős. 
+                        Wyatt Earp legjobb barátja, az O.K. Corral-i párbaj egyik hőse. 
+                        „I'm your huckleberry” - mondta, mielőtt kihívta volna Johnny Ringót.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+<div id="legend-hover-preview">
+    <img id="hover-preview-img" src="" alt="Előnézet">
+</div>
+
+<script>
+if (window.innerWidth > 1024) {
+    const preview = document.getElementById('legend-hover-preview');
+    const previewImg = document.getElementById('hover-preview-img');
+
+    document.querySelectorAll('.legend-name').forEach(name => {
+        name.addEventListener('mouseenter', function() {
+            const card = this.closest('.legend-card');
+            const imgSrc = card.querySelector('.legend-img').src;
+
+            previewImg.src = imgSrc;
+            preview.classList.add('active');
+        });
+
+        name.addEventListener('mouseleave', function() {
+            preview.classList.remove('active');
+        });
+    });
+
+    document.addEventListener('mouseleave', function(e) {
+        if (!e.relatedTarget && !e.toElement) {
+            preview.classList.remove('active');
+        }
+    });
+}
+</script>
+
+    <footer class="western-footer">
+    <p style="text-align: center;">© 2025 Minden jog fenntartva | Készítette: Tóth Péter A24E5Z</p>
+    </footer>
+
+</body>
+</html>

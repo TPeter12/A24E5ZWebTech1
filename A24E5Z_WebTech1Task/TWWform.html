@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Űrlap | The Wild West</title>
+    <link rel="stylesheet" href="TWW.css">
+    <link rel="stylesheet" href="TWWform.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <!-- Sticky bőr háttér -->
+    <div class="background"></div>
+
+    <!-- Sticky felső menüsáv -->
+    <header class="topbar">
+        <div class="logo">WILD WEST SALOON</div>
+        <nav class="main-nav">
+            <a href="TWWwebpage.html">Kezdőlap</a>
+            <a href="TWWlegends.html">Legendák</a>
+            <a href="TWWguns.html">Fegyverek</a>
+            <a href="TWWmedia.html">Média</a>
+            <a href="TWWform.html">Űrlap</a>
+        </nav>
+    </header>
+    
+    <section id="form">
+        <div class="content">
+            <section id="home">
+            <h1>Üzenet a Vadnyugaton</h1>
+            <p>Ha te is szeretnél bekerülni a legendák közé, vagy csak üzenni valakinek a prérin:</p>
+            </section>
+
+            <div class="form-wrapper">
+                <form id="wildwestForm" novalidate>
+                    <div class="input-group">
+                        <input type="text" id="name" name="name" placeholder="Neved (vagy fedőneved)" required>
+                        <span class="error-msg"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="number" id="age" name="age" placeholder="Életkorod (csak szám)" min="10" max="120" required>
+                        <span class="error-msg"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="email" id="email" name="email" placeholder="Email (nem adjuk oda senkinek)" required>
+                        <span class="error-msg"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <select id="recipient" name="recipient" required>
+                            <option value="" disabled selected>Kinek küldöd az üzenetet?</option>
+                            <option value="sheriff">A Seriffnek (az igazság őrének)</option>
+                            <option value="bandit">A Banditának (a préri farkasának)</option>
+                        </select>
+                        <span class="error-msg"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <textarea id="message" name="message" rows="6" placeholder="Üzeneted a címzettnek..." required></textarea>
+                        <span class="error-msg"></span>
+                    </div>
+
+                    <button type="submit" id="submitBtn">
+                        <span class="btn-text">Küldés a Vadnyugatra</span>
+                        <span class="btn-loading" style="display:none;">Lovak nyerítenek...</span>
+                    </button>
+                </form>
+
+                <!-- SIKERESÜZENET -->
+                <div id="successMessage" class="success-box" style="display:none;">
+                    <h3>Üzenet elküldve!</h3>
+                    <p>A préri szele már viszi a szavaidat...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    $(document).ready(function() {
+        $('#wildwestForm').on('submit', function(e) {
+            e.preventDefault();
+            
+            $('.error-msg').text('');
+            let valid = true;
+
+            if ($.trim($('#name').val()) === '') {
+                $('#name').next().text('Add meg a neved vagy a fedőneved!');
+                valid = false;
+            }
+
+            const age = $('#age').val();
+            if (age === '' || age < 10 || age > 120) {
+                $('#age').next().text('Érvényes életkort adj meg (10-120)!');
+                valid = false;
+            }
+
+            const email = $('#email').val().trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                $('#email').next().text('Ez nem tűnik igazi emailnek, pajtás...');
+                valid = false;
+            }
+
+            if (!$('#recipient').val()) {
+                $('#recipient').next().text('Válaszd ki, kinek küldöd!');
+                valid = false;
+            }
+
+            if ($.trim($('#message').val()) === '') {
+                $('#message').next().text('Ne légy szégyenlős, írj valamit!');
+                valid = false;
+            }
+
+            if (valid) {
+                $('.btn-text').hide();
+                $('.btn-loading').show();
+
+                setTimeout(function() {
+                    $('#wildwestForm')[0].reset();
+                    $('.btn-text').show();
+                    $('.btn-loading').hide();
+                    $('#successMessage').fadeIn();
+
+                    setTimeout(() => $('#successMessage').fadeOut(), 7000);
+                }, 2000);
+            }
+        });
+    });
+    </script>
+
+    <footer class="western-footer">
+    <p style="text-align: center;">© 2025 Minden jog fenntartva | Készítette: Tóth Péter A24E5Z</p>
+    </footer>
+
+</body>
+</html>

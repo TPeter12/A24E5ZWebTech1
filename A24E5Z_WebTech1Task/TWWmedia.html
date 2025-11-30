@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média | The Wild West</title>
+    <link rel="stylesheet" href="TWW.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .video-container {
+            position: relative;
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 
+                0 0 50px rgba(78, 39, 11, 0.9),
+                inset 0 0 100px rgba(0,0,0,0.7);
+            margin: 4rem 0;
+            border: 10px solid #442d17;
+            outline: 5px solid #DAA520;
+
+        }
+
+        #video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .custom-controls {
+            background: url('kepek/wood.jpg') center/cover;
+            background-color: #442d17;
+            padding: 2.5rem 2rem;
+            border: 12px solid #442d17;
+            border-top: none;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 
+                0 25px 50px rgba(0,0,0,0.9),
+                inset 0 15px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .control-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(10px, 0.5fr));
+        gap: 1.5rem;
+        padding: 1rem;
+        justify-items: center;
+        }
+
+        .custom-controls button {
+            width: 68px;
+            height: 68px;
+            border: 4px solid #442d17;
+            border-radius: 14px;
+            background: url('kepek/oldpaper.jpg') center/cover, #1a0f00;
+            color: #000;
+            font-weight: 900;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .custom-controls button:hover {
+            background: linear-gradient(145deg, #FFF8E1, #E6C070);
+        }
+
+        .custom-controls button span.material-symbols-outlined {
+            font-size: 2.4rem;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+
+    <header class="topbar">
+        <div class="logo">WILD WEST SALOON</div>
+        <nav class="main-nav">
+            <a href="TWWwebpage.html">Kezdőlap</a>
+            <a href="TWWlegends.html">Legendák</a>
+            <a href="TWWguns.html">Fegyverek</a>
+            <a href="TWWmedia.html">Média</a>
+            <a href="TWWform.html">Űrlap</a>
+        </nav>
+    </header>
+
+    <main class="content">
+        <section id="home">
+            <h1>Amikor Megszólalt a Vas</h1>
+            <p class="lead">A Vadnyugat nem csak történelem - mozivászonon lett halhatatlan. Íme minden idők egyik legnagyobb hatású párbaja, amitől még ma is libabőrös lesz az ember.</p>
+
+            <!-- Videó + új keret -->
+            <div class="video-container">
+                <video src="A_Jo_a_Rossz_es_a_Csuf.mp4" id="video" controls></video>
+            </div>
+
+            <p class="video-caption">
+                <strong>A Jó, a Rossz és a Csúf</strong> - 1966 - Sergio Leone - Részlet
+            </p>
+
+
+            <div class="custom-controls">
+                <div class="control-grid">
+                    <button id="start" title="Lejátszás"><span class="material-symbols-outlined">play_arrow</span><span class="btn-label">Play</span></button>
+                    <button id="stop" title="Stop"><span class="material-symbols-outlined">stop</span><span class="btn-label">Stop</span></button>
+                    <button id="startstop" title="Szünet/Play"><span class="material-symbols-outlined">play_pause</span><span class="btn-label">Pause</span></button>
+                </div>
+
+                <div class="control-grid">
+                    <button id="mute" title="Némítás"><span class="material-symbols-outlined">volume_off</span><span class="btn-label">Mute</span></button>
+                    <button id="volLow" title="Halk"><span class="material-symbols-outlined">volume_down</span><span class="btn-label">Halk</span></button>
+                    <button id="volHigh" title="Hangos"><span class="material-symbols-outlined">volume_up</span><span class="btn-label">Teljes</span></button>
+                </div>
+
+                <div class="control-grid">
+                    <button id="rateVerySlow" title="0.25x">0.25x</button>
+                    <button id="rateSlow" title="0.5x">0.5x</button>
+                    <button id="rateNormal" title="1x">1x</button>
+                    <button id="rateFast" title="1.5x">1.5x</button>
+                    <button id="rateVeryFast" title="2x">2x</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+        <script>
+            const btnClick = (id, onclick) => {
+                const el = document.getElementById(id);
+                if (el) el.addEventListener("click", onclick);
+            };
+            
+            const video = document.getElementById("video");
+            
+            btnClick("start", () => video.play());
+            btnClick("stop", () => { video.pause(); video.currentTime = 0; });
+            btnClick("startstop", () => video.paused ? video.play() : video.pause());
+            
+            btnClick("mute", () => video.muted = true);
+            btnClick("volLow", () => { video.muted = false; video.volume = 0.2; });
+            btnClick("volHigh", () => { video.muted = false; video.volume = 1.0; });
+            
+            btnClick("rateVerySlow", () => video.playbackRate = 0.25);
+            btnClick("rateSlow", () => video.playbackRate = 0.5);
+            btnClick("rateNormal", () => video.playbackRate = 1.0);
+            btnClick("rateFast", () => video.playbackRate = 1.5);
+            btnClick("rateVeryFast", () => video.playbackRate = 2.0);
+    </script>
+
+    <footer class="western-footer">
+    <p style="text-align: center;">© 2025 Minden jog fenntartva | Készítette: Tóth Péter A24E5Z</p>
+    </footer>
+
+</body>
+</html>

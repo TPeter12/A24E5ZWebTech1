@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fegyverek | The Wild West</title>
+    <link rel="stylesheet" href="TWW.css">
+    <link rel="stylesheet" href="TWWguns.css">
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <header class="topbar">
+        <div class="logo">WILD WEST SALOON</div>
+        <nav class="main-nav">
+            <a href="TWWwebpage.html">Kezdőlap</a>
+            <a href="TWWlegends.html">Legendák</a>
+            <a href="TWWguns.html">Fegyverek</a>
+            <a href="TWWmedia.html">Média</a>
+            <a href="TWWform.html">Űrlap</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar">
+        <h2>Fegyverek</h2>
+        <ul id="weapon-menu">
+            <!-- ide kerülnek majd a JSON-ből a linkek -->
+        </ul>
+    </aside>
+
+    <main class="content">
+
+        <!-- Ez marad -->
+        <section id="home">
+            <h1>A Vadnyugat Legendás Vasai</h1>
+            <p>Nincs saloon párbaj nélkül, nincs cowboy fegyver nélkül. Íme a hat leghíresebb darab, amelyekkel történelmet írtak a préri hősei… és banditái.</p>
+        </section>
+
+        <!-- Itt jelennek meg majd a JSON-ből generált fegyver blokkok -->
+        <div id="weapon-container"></div>
+
+    </main>
+
+    <!-- JSON betöltése és HTML generálása -->
+    <script>
+        fetch("TWWguns.json")
+            .then(res => res.json())
+            .then(data => loadWeapons(data));
+
+        function loadWeapons(weapons) {
+
+            // Oldalsó menü generálása
+            const menu = document.getElementById("weapon-menu");
+            menu.innerHTML = weapons.map(w =>
+                `<li><a href="#${w.id}">${w.title}</a></li>`
+            ).join("");
+
+            // Fegyver blokkok ide kerülnek
+            const container = document.getElementById("weapon-container");
+
+            weapons.forEach(w => {
+
+                // Táblázat sorok
+                const rows = Object.entries(w.data)
+                    .map(([key, val]) => `<tr><th>${key}</th><td>${val}</td></tr>`)
+                    .join("");
+
+                container.innerHTML += `
+                    <section id="${w.id}" class="weapon-block">
+                        <div class="weapon-img">
+                            <img src="${w.img}" alt="${w.title}">
+                        </div>
+                        <div class="weapon-info">
+                            <h2 class="weapon-title">${w.title}</h2>
+                            <table>${rows}</table>
+                        </div>
+                    </section>
+                `;
+            });
+        }
+    </script>
+
+    <footer class="western-footer">
+    <p style="text-align: center;">© 2025 Minden jog fenntartva | Készítette: Tóth Péter A24E5Z</p>
+    </footer>
+</body>
+</html>
