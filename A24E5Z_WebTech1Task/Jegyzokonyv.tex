@@ -1,0 +1,272 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[magyar]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext,newtxmath}
+
+\usepackage{setspace}
+\onehalfspacing
+\frenchspacing
+\usepackage{geometry}
+\geometry{margin=3cm}
+\usepackage{ragged2e}
+\justifying
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+
+
+\lstset{
+  basicstyle=\ttfamily\small,      
+  backgroundcolor=\color{gray!10},
+  frame=single,
+  breaklines=true,
+  showstringspaces=false,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  literate=
+    {á}{{\'a}}1
+    {é}{{\'e}}1
+    {í}{{\'\i}}1
+    {ó}{{\'o}}1
+    {ö}{{\"o}}1
+    {ő}{{\H{o}}}1
+    {ú}{{\'u}}1
+    {ü}{{\"u}}1
+    {ű}{{\H{u}}}1
+}
+
+\lstdefinelanguage{json}{
+    basicstyle=\ttfamily\small,
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    backgroundcolor=\color{gray!5},
+    stringstyle=\color{red!70!black},
+    keywordstyle=\color{blue},
+    keywords={true,false,null},
+    morestring=[b]",
+    literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ö}{{\"o}}1
+             {ő}{{\H{o}}}1 {ú}{{\'u}}1 {ü}{{\"u}}1 {ű}{{\H{u}}}1
+             {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ö}{{\"O}}1
+             {Ő}{{\H{O}}}1 {Ú}{{\'U}}1 {Ü}{{\"U}}1 {Ű}{{\H{U}}}1
+             {„}{{"}}1 {”}{{"}}1 {“}{{"}}1
+}
+
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{3cm}
+    {\Huge\bfseries JEGYZŐKÖNYV \par}
+    \vspace{1.5cm}
+    {\Large Web Technológiák 1. \par}
+    \vspace{0.5cm}
+    {\Large Féléves feladat \par}
+    \vspace{0.5cm}
+    {\Large Wild West Saloon weboldal \par}
+
+    \vfill
+    \begin{flushright}
+        \textbf{Készítette:} Tóth Péter\\[0.3cm]
+        \textbf{Neptunkód:} A24E5Z\\[0.3cm]
+        \textbf{Dátum:} 2025. november
+    \end{flushright}
+
+    \vspace{2cm}
+    {\large Miskolc, 2025}
+\end{titlepage}
+
+% ---------- TARTALOMJEGYZÉK ----------
+\tableofcontents
+\newpage
+
+\section{Bevezetés}
+A web technológiák napjainkra a digitális kommunikáció és információcsere alapvető pilléreivé váltak. A HTML, CSS, JavaScript és a hozzájuk kapcsolódó könyvtárak, mint a jQuery, olyan szabványos eszközkészletet biztosítanak, amelyek segítségével egységesen, minden eszközön elérhető módon jeleníthető meg tartalom.
+
+\section{Feladat leírása}
+A jelen dokumentum a Wild West Saloon vadnyugattal foglalkozó többoldalas weboldal felépítését, működését és technikai megoldásait mutatja be. A weboldal HTML, CSS, JavaScript, jQuery és JSON technológiákra épül.
+
+\section{Weblap felépítése}
+
+\subsection{Navigációs gombok}
+
+Az oldal tetején találhatóak navigációs gombok. A jobb oldali részben találhatóak a html dokumentumok közötti navigáláshoz szükséges gombok ezek a "Kezdőlap", "Legendák", "Fegyverek", "Média" és "Űrlap" gombok, ha rájuk viszed az egeret besárgulnak ezzel jelezve a felhasználónak, hogy kattinthatóak.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{kepek/PDFhez/navigacio.jpg}
+\caption{A navigáció sáv}
+\label{fig: navigacios gombok}
+\end{figure}
+
+\subsection{Oldalsáv}
+
+Az oldalsávon lévő linkek a könnyebb navigálásért felelősek. Minden fejezet egy külön linkkel rendelkezik, ezért azonnal ahhoz tudunk ugrani, amire szükségünk van.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{kepek/PDFhez/oldalsav.jpg}
+\caption{Az oldalsáv}
+\label{fig: oldalsav gombok}
+\end{figure}
+
+\subsection{Kép megjelenítő}
+
+Egy kép jelenik meg ha a kurzurt a történetnél lévő névre visszük rá ami oldalt fog megjelenni. A név színe átvált fehérre, jelezve a felhasználónak, hogy ott valami történik.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{kepek/PDFhez/kepmegjelenito.jpg}
+\caption{Kép megjelenítő}
+\label{fig: kep megjelenito}
+\end{figure}
+
+\subsection{Videó kezelő gombok}
+
+Minden videó alatt találhatóak gombok, amelyek a videó alapvető kezelésére szolgál. Az első sorban a videó elindítására, leállítására, illetve elindít/leállít gombok találhatóak. A második sorban a hangszabályzó gombok, az első  némítja a videót lejjebb vesz a hangerőt, a második lejjebb vesz a hangerőt, a harmadik felveszi a maximum hangerőre. A harmadik sorban a videó lejátszási sebessége állítható be. Az öt gomb sorrendben a következő sebességértékeket kínálja: 0.25x, 0.5x, 1x (normál sebesség), 1.5x és 2x. A kiválasztott sebességre kattintva a videó azonnal az adott tempóban folytatja a lejátszást.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{kepek/PDFhez/video_kezelo_gombok.jpg}
+\caption{Videó kezelő gombok}
+\label{fig: video kezelo gombok}
+\end{figure}
+
+\section{Scriptek}
+
+\subsection{Kép megjelenítő}
+
+Ez a JavaScript-kód kizárólag 1024\,px-nél szélesebb képernyőkön (tehát elsősorban asztali környezetben) fut. Amikor a felhasználó a kurzorral egy szereplő neve fölé viszi az egeret (azok az elemek, amelyek a \texttt{.legend-name} osztályt viselik), a szkript megkeresi a hozzá tartozó kártyaelem (\texttt{.legend-card}) legközelebbi szülőjét, majd onnan kinyeri a szereplő képének elérési útját. Ezt a képet azonnal betölti egy előre definiált előnézeti konténerbe (az azonosítója \texttt{legend-hover-preview}). Eközben az előnézeti elem megkapja az \texttt{active} osztályt, amelynek köszönhetően láthatóvá válik és szép fade-in animációval megjelenik (általában jobb oldalon, fix pozícióban).
+Amint az egér elhagyja a nevet, az \texttt{active} osztály eltávolításra kerül, így az előnézet elhalványul és eltűnik. Egy további eseményfigyelő a teljes dokumentum \texttt{mouseleave} eseményét is kezeli: ha az egér egyenesen kilép a böngészőablakból, akkor is garantáltan eltűnik az előnézet, elkerülve a „beragadt” állapotot.
+
+\begin{lstlisting}[language=java, caption={Kép megjelenítés}]
+if (window.innerWidth > 1024) {
+    const preview = document.getElementById('legend-hover-preview');
+    const previewImg = document.getElementById('hover-preview-img');
+
+    document.querySelectorAll('.legend-name').forEach(name => {
+        name.addEventListener('mouseenter', function() {
+            const card = this.closest('.legend-card');
+            const imgSrc = card.querySelector('.legend-img').src;
+
+            previewImg.src = imgSrc;
+            preview.classList.add('active');
+        });
+
+        name.addEventListener('mouseleave', function() {
+            preview.classList.remove('active');
+        });
+    });
+
+    document.addEventListener('mouseleave', function(e) {
+        if (!e.relatedTarget && !e.toElement) {
+            preview.classList.remove('active');
+        }
+    });
+}
+\end{lstlisting}
+
+
+\subsection{Animáció}
+
+képek és bizonyos tartalmi elemek megjelenését látványos, görgetéshez kötött animáció teszi dinamikussá. Ezt a CSS \texttt{@keyframes appear} szabály és a modern \texttt{scroll-driven animations} (görgetésvezérelt animációk) kombinációja biztosítja:
+
+\begin{lstlisting}[language=java, caption={Animáció}]
+@keyframes appear {
+    from{
+        opacity: 0;
+        scale: 0.5
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+animation: appear linear;
+animation-timeline: view();
+animation-range: entry 0% cover 40%;
+    
+\end{lstlisting}
+
+
+\subsection{Adat-lekérdezés}
+
+Ez a program a DomRead-el szemben csak szimplán kiírja az adatokat, hanem emberileg olvasható és feldolgozható formában és mennyiségben írja ki azt.
+
+\begin{lstlisting}[language=java, caption={Javaban rendezett adatkiírás}]
+            System.out.println("3. Minden tankolás dátuma:");
+            NodeList tankList = doc.getElementsByTagName("Tankolas");
+            for (int i = 0; i < tankList.getLength(); i++) {
+                Element t = (Element) tankList.item(i);
+                String datum = t.getElementsByTagName("Datum").item(0).getTextContent();
+                System.out.println("  - " + datum);
+            }
+            System.out.println();
+\end{lstlisting}
+
+Ebben a kódrészletben először kinyer a program minden hasznos elementet és attribútumot, majd azt egy kompakt módon olvashatóan kiírja.
+
+\subsection{Json-ből beolvasás}
+
+A TWWguns.html oldalon a táblázatok adatai dinamikusan, egy külső JSON fájlból kerülnek betöltésre. A program minden egyes fegyver objektumot beolvas, majd annak tulajdonságait egy előre elkészített HTML-es táblázat struktúrába illeszti, ezzel automatikusan felépítve a teljes táblázatot. Így az adatok karbantartása egyszerűen a JSON fájl szerkesztésével megoldható, nincs szükség a HTML kód manuális módosítására.
+
+\begin{lstlisting}[language=java, caption={Json beolvasás}]
+fetch("TWWguns.json")
+            .then(res => res.json())
+            .then(data => loadWeapons(data));
+
+        function loadWeapons(weapons) {
+
+            // Oldalsó menü generálása
+            const menu = document.getElementById("weapon-menu");
+            menu.innerHTML = weapons.map(w =>
+                `<li><a href="#${w.id}">${w.title}</a></li>`
+            ).join("");
+
+            // Fegyver blokkok ide kerülnek
+            const container = document.getElementById("weapon-container");
+
+            weapons.forEach(w => {
+
+                // Táblázat sorok
+                const rows = Object.entries(w.data)
+                    .map(([key, val]) => `<tr><th>${key}</th><td>${val}</td></tr>`)
+                    .join("");
+
+                container.innerHTML += `
+                    <section id="${w.id}" class="weapon-block">
+                        <div class="weapon-img">
+                            <img src="${w.img}" alt="${w.title}">
+                        </div>
+                        <div class="weapon-info">
+                            <h2 class="weapon-title">${w.title}</h2>
+                            <table>${rows}</table>
+                        </div>
+                    </section>
+                `;
+            });
+        }
+\end{lstlisting}
+
+\begin{lstlisting}[language=json, caption={Egy fegyver adatait tároló JSON objektum (részlet)}]
+{
+    "id": "colt-saa",
+    "title": "Colt Single Action Army „Peacemaker”",
+    "img": "kepek/Colt.png",
+    "data": {
+      "Típus": "Forgópisztoly (single-action revolver)",
+      "Űrméret": ".45 Colt",
+      "Tárkapacitás": "6 lőszer",
+      "Gyártás": "1873-napjainkig",
+      "Becenév": "„The Peacemaker” - „Az egyenlítő”"
+    }
+}
+\end{lstlisting}
+
+
+\end{document}
