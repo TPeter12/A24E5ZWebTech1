@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>JSON megvalositasa - JavaScript</title>
+</head>
+<body>
+
+<h3>Könyvek listája (JSON → HTML)</h3>
+
+<ul id="lista"></ul>
+
+<script>
+const data = {
+  "konyvek": [
+    {
+      "szerzo": "Nyékyné Dr. Gaizler Judit",
+      "cim": "Java 2 I-II. - Útikalauz programozóknak",
+      "kiadas": "2009"
+    },
+    {
+      "szerzo": "Reiter István",
+      "cim": "C# programozás lépésről lépésre",
+      "kiadas": "2018"
+    }
+  ]
+};
+
+const lista = document.getElementById("lista");
+
+for (let i = 0; i < data.konyvek.length; i++) {
+    const li = document.createElement("li");
+    li.innerHTML = 
+        data.konyvek[i].szerzo + " - " +
+        data.konyvek[i].cim + " (" +
+        data.konyvek[i].kiadas + ")";
+    lista.appendChild(li);
+}
+</script>
+
+</body>
+</html>

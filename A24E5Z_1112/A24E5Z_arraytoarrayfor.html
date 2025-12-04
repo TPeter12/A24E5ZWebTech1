@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Tömbökön belüli tömbök ciklusa</title>
+</head>
+<body>
+
+<h2>Tömbökön belüli tömbök ciklusa</h2>
+<h2><strong>Tóth Péter (21)</strong></h2>
+
+<div id="A24E5Z"></div>
+
+<script>
+const TPobj = {
+    "name":"TP",
+    "age":21,
+    "cars": [
+        {"name":"Toyota", "models":["CHR", "Corolla", "Proace"]},
+        {"name":"Ford",   "models":["Kuga", "Mondeo", "Mustang"]},
+        {"name":"BMW",    "models":["320", "X3", "X5"]},
+        {"name":"Fiat",   "models":["500", "Panda", "Tipo"]}
+    ]
+};
+
+let szoveg = "";
+
+for (let i = 0; i < TPobj.cars.length; i++) {
+
+    szoveg += "<h3>" + TPobj.cars[i].name + ":</h3><ul>";
+
+    for (let j = 0; j < TPobj.cars[i].models.length; j++) {
+        szoveg += "<li>" + TPobj.cars[i].models[j] + "</li>";
+    }
+
+    szoveg += "</ul>";
+}
+
+document.getElementById("A24E5Z").innerHTML = szoveg;
+</script>
+
+</body>
+</html>

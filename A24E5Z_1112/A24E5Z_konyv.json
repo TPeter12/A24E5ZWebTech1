@@ -1,0 +1,16 @@
+{
+    "konyvek": {
+        "konyv": [
+            {
+                "szerzo": "Nyékyné Dr. Gaizler Judit",
+                "cim": "Java 2 I-II. - Útikalauz programozóknak",
+                "kiadas": "2009"
+            },
+            {
+                "szerzo": "Reiter István",
+                "cim": "C# programozás lépésről lépésre",
+                "kiadas": "2018"
+            }
+        ]
+    }
+}

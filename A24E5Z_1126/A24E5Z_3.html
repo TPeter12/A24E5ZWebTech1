@@ -43,7 +43,7 @@
     <input type="password", id="pass" name="pass"> <br>
 
     
-    <button id="myButton">Jelentkezés</button>
+    <button id="myButton" >Jelentkezés</button>
 
     <script>
         // 1 kattintás → eltűnik
@@ -56,7 +56,15 @@
             $(this).closest("p").hide();
         });
 
-        $("#myButton").mouseenter(function() { ... })
+        $("#myButton").hover(function(e) {
+            $("#infoBox")
+                .text("Ide kattintva tudsz jelentkezni a képzésre!")
+                .css({ top: e.pageY + 15, left: e.pageX + 15 })
+                .stop(true,true)
+                .fadeIn(200);
+        }, function() {
+            $("#infoBox").fadeOut(200);
+        });
 
         $(document).ready(function () {
     $("#fejlec").on("mouseenter", function (event) {

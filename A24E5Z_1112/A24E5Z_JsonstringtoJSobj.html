@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>JSON String - JS objektum</title>
+</head>
+<body>
+
+<h3>JSON String konvertálása JS objektummá</h3>
+
+<p id="A24E5Z"></p>
+
+<button onclick="beolvas()">Beolvasás</button>
+
+<script>
+function beolvas() {
+    const jsonString =
+        '{"nev":"Kiss Péter", "iranyitoszam":"3515", "varos":"Miskolc", "egyetem":"Miskolci Egyetem"}';
+
+    const obj = JSON.parse(jsonString);
+
+    document.getElementById("A24E5Z").innerHTML =
+        "Egyetem: " + obj.egyetem + "<br>" +
+        "Város: " + obj.varos + "<br>" +
+        "Irányítószám: " + obj.iranyitoszam + "<br>" +
+        "Név: " + obj.nev + "<br>";
+}
+</script>
+
+</body>
+</html>

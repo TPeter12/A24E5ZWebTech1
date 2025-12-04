@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>JS objektumot konvertálja JSON String</title>
+</head>
+<body>
+
+<h3>JS objektum - JSON String</h3>
+
+<p id="A24E5Z"></p>
+
+<button onclick="general()">JSON generálás</button>
+
+<script>
+function general() {
+
+    const obj = {
+        nev: "Kiss Péter",
+        iranyitoszam: "3515",
+        varos: "Miskolc",
+        egyetem: "Miskolci Egyetem"
+    };
+
+    const jsonString = JSON.stringify(obj);
+
+    document.getElementById("A24E5Z").innerHTML = jsonString;
+}
+</script>
+
+</body>
+</html>

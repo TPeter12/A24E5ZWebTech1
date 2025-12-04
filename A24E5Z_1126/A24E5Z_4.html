@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A24E5Z_4</title>
+    <style>
+        body {
+            margin: 30px;
+        }
+        .bekezdesek {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        #urlap {
+            background-color: #c8ebf8;
+            padding: 40px;
+            width: 10%;
+            border-radius: 0px;
+            margin: 0px 0px;
+            transition: opacity 0.5s ease;
+        }
+        .gombok {
+            margin: 15px 0;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+        input[type=text], input[type=email], input[type=password] {
+            padding: 8px;
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>jQuery feladat</h1>
+    <b>A jQuery egy JavaScript programozói könyvtár, amelyet John Resig kezdett fejleszteni.</b>
+    <p>Elterjedtnek tekinthető, segítségével könnyen bejárható egy HTML oldal DOM-ja.</p>
+    <p>Effekteket és animációt adhatunk HTML elemeinkhez. Számtalan plugint írtak hozzá.</p>
+
+    <div class="gombok">
+        <button onclick="elrejt()"><b>Elrejt</b></button>
+        <button onclick="megjelenit()"><b>Megjelenít</b></button>
+        <button onclick="valtogatas()"><b>Ki/Bekapcsol</b></button>
+    </div>
+
+    <div id="urlap">
+        <h2>Űrlap</h2>
+        <form>
+            <label>Név:</label><br>
+            <input type="text"><br><br>
+
+            <label>Email:</label><br>
+            <input type="email"><br><br>
+
+            <label>Jelszó:</label><br>
+            <input type="password"><br><br>
+
+            <button type="submit">Jelentkezés</button>
+        </form>
+        </div>
+        <div class="gombok">
+            <button onclick="atlagos(0.1)">Átetszőség=0.1</button>
+            <button onclick="atlagos(0.5)">Átetszőség=0.5</button>
+            <button onclick="atlagos(0.8)">Átetszőség=0.8</button>
+        </div>
+        <div class="gombok">
+            <button onclick="elrejt()">Elrejt</button>
+            <button onclick="megjelenit()">Megjelenít</button>
+            <button onclick="valtogatas()">Ki/Bekapcsol</button>
+        </div>
+
+
+    <script>
+        function elrejt() {
+            document.getElementById("urlap").style.opacity = "0.1";
+        }
+
+        function megjelenit() {
+            document.getElementById("urlap").style.opacity = "1";
+        }
+
+        function valtogatas() {
+            let urlap = document.getElementById("urlap");
+            if (urlap.style.opacity === "0.1" || urlap.style.opacity === "") {
+                urlap.style.opacity = "1";
+            } else {
+                urlap.style.opacity = "0.1";
+            }
+        }
+
+        function atlagos(ertek) {
+            document.getElementById("urlap").style.opacity = ertek;
+        }
+    </script>
+
+</body>
+</html>
