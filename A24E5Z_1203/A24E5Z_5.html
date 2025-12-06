@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>A24E5Z - 5. feladat (DOM manipuláció)</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+
+        #doboz {
+            width: 300px;
+            height: 150px;
+            background: #27ae60;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .forras {
+            margin-top: 20px;
+            color: black;
+        }
+
+        form {
+            margin-top: 30px;
+            padding: 20px;
+            background: white;
+            border: none;
+            width: 300px;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="szoveg">Szöveg hozzáadása</button>
+    <button id="gomb">Gomb</button>
+    <button id="ujgomb">Új gomb felvétele</button>
+    <button id="fejlec">Fejléc felvétele</button>
+    <button id="alcim">Alcím felvétele</button>
+    <button id="urlapfej">Űrlap fejléc felvétele</button>
+
+    <div id="doboz">ME GEIK - PTI</div>
+
+
+
+    <form>
+        <label>Név:</label><br>
+        <input type="text" placeholder="Pl. Kovács Béla"><br>
+        <label>E-mail:</label><br>
+        <input type="email" placeholder="nev@példa.hu"><br>
+        <label>Jelszó:</label><br>
+        <input type="password"><br><br>
+        <input type="submit" value="Jelentkezés">
+    </form>
+
+    <div class="forras">
+       Forrás: <a href="http://www.w3schools.com/jquery/jquery_dom_get.asp">http://www.w3schools.com/jquery/jquery_dom_get.asp</a> 
+    </div>
+
+    <script src="A24E5Z_5.js"></script>
+</body>
+</html>

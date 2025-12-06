@@ -1,0 +1,8 @@
+body { font-family: Arial, sans-serif; margin: 20px; background: #f4f4f4; }
+h1, h2 { color: #2c3e50; }
+button { padding: 10px 15px; margin: 5px; background: #3498db; color: white; border: none; cursor: pointer; }
+button:hover { background: #2980b9; }
+#terulet { margin-top: 20px; padding: 20px; background: white; border: 1px solid #ddd; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+th { background: #3498db; color: white; }

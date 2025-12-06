@@ -1,138 +1,95 @@
 {
     "A24E5Z_orarend": {
-        "kurzus":[
+        "cim": "Miskolci Egyetem, 3515 Miskolc-Egyetemváros",
+        "iranyitoszam": 3515,
+        "varos": "Miskolc",
+        "utca": "Egyetemváros",
+        "telefonszam": {
+            "tipus": "Vezetékes",
+            "szam": "0646 555-125"
+        },
+        "mobil": {
+            "tipus": "Mobil",
+            "szam": "0670 555-4567"
+        },
+        "kurzus": [
             {
-                "targy": "WebTech",
-                "idopont": {
-                    "nap": "Hétfő",
-                    "tol": 10,
-                    "ig": 12
-                },
+                "targy": "Web technológiák 1",
+                "idopont": { "nap": "Hétfő", "tol": 10, "ig": 12 },
                 "helyszin": "A1 magasfsz V.ea.",
                 "oktato": "Agrádi Anita",
                 "szak": "Programtervező Informatikus"
             },
-
             {
                 "targy": "Műszaki Angol",
-                "idopont": {
-                    "nap": "Hétfő",
-                    "tol": 12,
-                    "ig": 14
-                },
+                "idopont": { "nap": "Hétfő", "tol": 12, "ig": 14 },
                 "helyszin": "A1/316 III.ea.",
-                "oktato": "Pataki Janosne",
+                "oktato": "Pataki Jánosné",
                 "szak": "Programtervező Informatikus"
             },
-
             {
-                "targy": "Mesterseges Intelligencia alapjai",
-                "idopont": {
-                    "nap": "Kedd",
-                    "tol": 10,
-                    "ig": 12
-                },
+                "targy": "Mesterséges Intelligencia alapjai",
+                "idopont": { "nap": "Kedd", "tol": 10, "ig": 12 },
                 "helyszin": "A1 XXXII.ea.",
-                "oktato": "Kunne Dr. Tamas Judit",
+                "oktato": "Kunné Dr. Tamás Judit",
                 "szak": "Programtervező Informatikus"
             },
-
             {
-                "targy": "Mesterseges Intelligencia alapjai",
-                "idopont": {
-                    "nap": "Kedd",
-                    "tol": 12,
-                    "ig": 14
-                },
+                "targy": "Mesterséges Intelligencia alapjai",
+                "idopont": { "nap": "Kedd", "tol": 12, "ig": 14 },
                 "helyszin": "A1 XXXII.ea.",
                 "oktato": "Fazekas Levente",
                 "szak": "Programtervező Informatikus"
             },
-
             {
-                "targy": "Algoritmusok es vizsgalatuk",
-                "idopont": {
-                    "nap": "Kedd",
-                    "tol": 14,
-                    "ig": 16
-                },
+                "targy": "Algoritmusok és vizsgálatuk",
+                "idopont": { "nap": "Kedd", "tol": 14, "ig": 16 },
                 "helyszin": "A1/305 XXX.ea.",
-                "oktato": "Dr. Hazy Attila",
+                "oktato": "Dr. Házy Attila",
                 "szak": "Programtervező Informatikus"
             },
-
             {
-                "targy": "Algoritmusok es vizsgalatuk",
-                "idopont": {
-                    "nap": "Kedd",
-                    "tol": 16,
-                    "ig": 18
-                },
+                "targy": "Algoritmusok és vizsgálatuk",
+                "idopont": { "nap": "Kedd", "tol": 16, "ig": 18 },
                 "helyszin": "A1/305 XXX.ea.",
-                "oktato": "Dr. Hazy Attila",
+                "oktato": "Dr. Házy Attila",
                 "szak": "Programtervező Informatikus"
             },
-
             {
-                "targy": "Webes adatkezelo kornyezetek",
-                "idopont": {
-                    "nap": "Szerda",
-                    "tol": 8,
-                    "ig": 10
-                },
+                "targy": "Webes adatkezelő környezetek",
+                "idopont": { "nap": "Szerda", "tol": 8, "ig": 10 },
                 "helyszin": "A1/310",
-                "oktato": "Dr. Kovacs Laszlo Jozsef",
+                "oktato": "Dr. Kovács László József",
                 "szak": "Programtervező Informatikus"
             },
-
             {
-                "targy": "Webes adatkezelo kornyezetek",
-                "idopont": {
-                    "nap": "Szerda",
-                    "tol": 10,
-                    "ig": 12
-                },
+                "targy": "Webes adatkezelő környezetek",
+                "idopont": { "nap": "Szerda", "tol": 10, "ig": 12 },
                 "helyszin": "Inf103",
-                "oktato": "Dr. Bednarik Laszlo",
+                "oktato": "Dr. Bednárik László",
                 "szak": "Programtervező Informatikus"
             },
-
             {
-                "targy": "Web Technologiak",
-                "idopont": {
-                    "nap": "Szerda",
-                    "tol": 12,
-                    "ig": 14
-                },
+                "targy": "Web Technologiák",
+                "idopont": { "nap": "Szerda", "tol": 12, "ig": 14 },
                 "helyszin": "Inf101",
-                "oktato": "Dr. Bednarik Laszlo",
+                "oktato": "Dr. Bednárik László",
                 "szak": "Programtervező Informatikus"
             },
-
             {
-                "targy": "Vallalati informacios rendszerek",
-                "idopont": {
-                    "nap": "Szerda",
-                    "tol": 14,
-                    "ig": 16
-                },
+                "targy": "Vállalati információs rendszerek",
+                "idopont": { "nap": "Szerda", "tol": 14, "ig": 16 },
                 "helyszin": "Inf101",
-                "oktato": "Dr. Sasvari Peter",
+                "oktato": "Dr. Sasvári Péter",
                 "szak": "Programtervező Informatikus"
             },
-
             {
-                "targy": "Vallalati informacios rendszerek",
-                "idopont": {
-                    "nap": "Szerda",
-                    "tol": 18,
-                    "ig": 20
-                },
+                "targy": "Vállalati információs rendszerek",
+                "idopont": { "nap": "Szerda", "tol": 18, "ig": 20 },
                 "helyszin": "Inf101",
-                "oktato": "Dr. Sasvari Peter",
+                "oktato": "Dr. Sasvári Péter",
                 "szak": "Programtervező Informatikus"
             }
-
         ]
     }
 }
