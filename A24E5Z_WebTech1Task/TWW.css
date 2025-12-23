@@ -97,6 +97,26 @@ body {
     border-radius: 0 0 15px 0;
     box-shadow: 5px 5px 15px rgba(0,0,0,0.8);
     z-index: 99;
+    max-height: 90vh;           /* maximális magasság: a viewport 90%-a */
+    overflow-y: auto;           /* függőleges görgetősáv, ha szükséges */
+    overflow-x: hidden;         /* vízszintes ne legyen */
+}
+.sidebar::-webkit-scrollbar {
+    width: 10px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #FFD700;
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #f5deb3;
 }
 
 .sidebar h2 {

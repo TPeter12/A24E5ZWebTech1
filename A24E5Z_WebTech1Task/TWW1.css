@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.western-bang {
+  position: fixed;
+  pointer-events: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: #d12121;
+  text-shadow: 2px 2px 4px #000;
+  z-index: 9999;
+  user-select: none;
+  animation: bang 0.7s ease-out forwards;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes bang {
+  0%   { opacity: 1; transform: translate(-50%, -50%) scale(0) rotate(0deg); }
+  70%  { opacity: 1; transform: translate(-50%, -50%) scale(1.6) rotate(15deg); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(2.2) rotate(30deg); }
+}
+
+body {
+    font-family: 'Old Standard TT', serif;
+    color: #f5deb3;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Sticky háttérkép */
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('kepek/leather.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+    z-index: -2;
+}
+
+/* Sötét átlátszó fedőréteg */
+.background::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+/* Sticky felső sáv */
+.topbar {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(to bottom, #500000, #2E0000);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    border-bottom: 4px solid #500000;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+    color: #d82222;
+    letter-spacing: 4px;
+    text-shadow: 4px 4px 6px #000;
+}
+
+.main-nav a {
+    color: #f5deb3;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #d82222;
+}
+
+/* Sticky oldalsáv */
+.sidebar {
+    position: sticky;
+    top: 10%;
+    align-self: flex-start;
+    width: 15%;
+    background: rgba(50, 0, 0, 0.95);
+    padding: 30px 20px;
+    border-right: 5px solid #500000;
+    border-bottom: 5px solid #500000;
+    border-radius: 0 0 15px 0;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.8);
+    z-index: 99;
+}
+
+.sidebar h2 {
+    font-family: 'Cinzel', serif;
+    color: #d82222;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-shadow: 3px 3px 5px #000;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul a {
+    color: #f5deb3;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 8px 15px;
+    border-left: 4px solid transparent;
+}
+
+.sidebar ul a:hover {
+    color: #BB4444;
+    border-left: 4px solid #BB4444;
+    background: rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+
+@keyframes appear {
+    from{
+        opacity: 0;
+        scale: 0.5
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+/* Fő tartalom */
+.content {
+    margin-left: 25%;
+    padding: 40px;
+    max-width: 50%;
+}
+
+.content section {
+    margin-bottom: 20%;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 15px;
+    border: 3px solid #500000;
+    box-shadow: 0 0 20px rgba(70, 0, 0, 0.4);
+}
+
+.content h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 42px;
+    color: #d82222;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px #000;
+    text-align: center;
+}
+
+.content p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.western-footer {
+    background: linear-gradient(to top, #500000, #2E0000 100%);
+    border-top: 6px double #500000;
+    padding: 30px 20px 10px;
+    margin-top: 500px;
+    z-index: 100;
+}

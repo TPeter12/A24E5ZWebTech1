@@ -1,0 +1,66 @@
+.video-container {
+    position: relative;
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 
+        0 0 50px rgba(120, 0, 0, 0.6),
+        inset 0 0 100px rgba(0,0,0,0.7);
+    margin: 4rem 0;
+    border: 10px solid #600000;
+    outline: 5px solid #e04444;
+}
+
+#video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.custom-controls {
+    background: url('kepek/wood.jpg') center/cover;
+    background-color: #600000;
+    padding: 2.5rem 2rem;
+    border: 12px solid #600000;
+    border-top: none;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 
+        0 25px 50px rgba(0,0,0,0.9),
+        inset 0 15px 30px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.control-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10px, 0.5fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    justify-items: center;
+}
+
+.custom-controls button {
+    width: 68px;
+    height: 68px;
+    border: 4px solid #800000;
+    border-radius: 14px;
+    background: url('kepek/oldpaper.jpg') center/cover, rgba(60, 0, 0, 0.9);
+    color: #000;
+    font-weight: 900;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-controls button:hover {
+    background: linear-gradient(145deg, #a70000, #800000);
+    border-color: #e04444;
+    box-shadow: 0 0 15px rgba(224, 68, 68, 0.4);
+}
+
+.custom-controls button span.material-symbols-outlined {
+    font-size: 2.4rem;
+    margin-bottom: 4px;
+}

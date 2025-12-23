@@ -4,76 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Média | The Wild West</title>
-    <link rel="stylesheet" href="TWW.css">
+    <link id="theme-main" rel="stylesheet" href="TWW.css">
+    <link id="theme-media" rel="stylesheet" href="TWWguns.css">
+    <script src="TWWcss.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
-    <style>
-        .video-container {
-            position: relative;
-            background: #000;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 
-                0 0 50px rgba(78, 39, 11, 0.9),
-                inset 0 0 100px rgba(0,0,0,0.7);
-            margin: 4rem 0;
-            border: 10px solid #442d17;
-            outline: 5px solid #DAA520;
-
-        }
-
-        #video {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .custom-controls {
-            background: url('kepek/wood.jpg') center/cover;
-            background-color: #442d17;
-            padding: 2.5rem 2rem;
-            border: 12px solid #442d17;
-            border-top: none;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 
-                0 25px 50px rgba(0,0,0,0.9),
-                inset 0 15px 30px rgba(0, 0, 0, 0.15);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .control-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(10px, 0.5fr));
-        gap: 1.5rem;
-        padding: 1rem;
-        justify-items: center;
-        }
-
-        .custom-controls button {
-            width: 68px;
-            height: 68px;
-            border: 4px solid #442d17;
-            border-radius: 14px;
-            background: url('kepek/oldpaper.jpg') center/cover, #1a0f00;
-            color: #000;
-            font-weight: 900;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .custom-controls button:hover {
-            background: linear-gradient(145deg, #FFF8E1, #E6C070);
-        }
-
-        .custom-controls button span.material-symbols-outlined {
-            font-size: 2.4rem;
-            margin-bottom: 4px;
-        }
-    </style>
+    <script src="TWWgallery.js" defer></script>
+        <link rel="stylesheet" href="TWWgallery.css">
 </head>
 <body>
     <div class="background"></div>
@@ -126,6 +63,27 @@
                 </div>
             </div>
         </section>
+
+            <section>
+        <h1>Galéria</h1>
+        <p class="lead">Töltsd fel a kedvenc Vadnyugat képeidet!</p>
+
+        <div class="upload-container">
+        <label for="imageUpload" class="upload-btn">
+            <span class="material-symbols-outlined">add_photo_alternate</span>
+            Kép feltöltése
+        </label>
+        <input type="file" id="imageUpload" accept="image/*" multiple style="display: none;">
+        </div>
+    </section>
+
+    <div id="gallery" class="gallery-grid"></div>
+    <div id="lightbox" class="lightbox-hidden">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Nagyított kép">
+</div>
+
+
     </main>
     
         <script>
@@ -150,6 +108,8 @@
             btnClick("rateFast", () => video.playbackRate = 1.5);
             btnClick("rateVeryFast", () => video.playbackRate = 2.0);
     </script>
+
+
 
     <footer class="western-footer">
     <p style="text-align: center;">© 2025 Minden jog fenntartva | Készítette: Tóth Péter A24E5Z</p>

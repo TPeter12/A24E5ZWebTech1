@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const shootSound = new Audio("revolverSOUND.mp3");
-  shootSound.volume = 0.1;
+  shootSound.volume = 0.03;
 
   document.addEventListener("click", e => {
     const texts = ["BANG!", "POW!"];
